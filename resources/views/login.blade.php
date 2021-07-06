@@ -10,8 +10,11 @@
     <!--Incluimos la navegacion-->
     @include('partials.nav')
     <h1>Login</h1>
+    <!--imprimir usuario-->
+    <pre>{{ Auth::user()}}</pre>
     <!--Formulario de autenticación-->
     <form method="POST">
+        @csrf
         <input name="email" type="email" placeholder="email">
         <input name="password" type="password" placeholder="password">
         <button type="submit">Login</button>
