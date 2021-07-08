@@ -17,6 +17,7 @@
         @csrf
         <input name="email" type="email" placeholder="email">
         <input name="password" type="password" placeholder="password">
+        <input type="checkbox" name="remember" id=""> <br>
         <button type="submit">Login</button>
 
     </form>

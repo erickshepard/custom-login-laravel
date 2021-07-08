@@ -16,13 +16,20 @@ Route::post('login', function(){
     //con el metodo only traemos solo los datos que necesitamos
     //guardamos los datos del formulario 
     $credentials = request()->only('email','password');
+
+    //Guardamos si el user quiere guardar la session
+    $remember = request()->filled('remember');
+    // y lo pasamos como segundo atributo al metodo attemp
+    //dd(request()->filled('remember'));
     //ver el contenido metodo dump() 
     //dump($credentials);
     //Para validar los datos del form con la base de datos
     //attemp acepta un arreglo de datos y un boleano para maje
     //jar la session
     //hacemos una validacion si el login fue exitoso o no
-    if(Auth::attempt($credentials)){
+
+    //Para recordar la session mandamos true o false
+    if(Auth::attempt($credentials, $remember)){
         //manejar la session
         request()->session()->regenerate();
         //mensaje de login ok o re direccion a dasboard
