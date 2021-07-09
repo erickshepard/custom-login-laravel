@@ -9,7 +9,7 @@ use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
-    //
+    // Login
     public function login(Request $request){
       
             //request nos trae los datos
@@ -49,6 +49,19 @@ class LoginController extends Controller
                 'email' => __('auth.failed')
             ]);
             
+        
+    }
+    // Logout
+    public function logout( Request $request){
+        //para desloguear 
+        Auth::logout();
+
+        //
+        $request->session()->invalidate();
+        //
+        $request->session()->regenerateToken();
+        //regresar a una vista
+        return redirect('/login')->with('status','estas deslogueado');
         
     }
 }

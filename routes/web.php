@@ -18,3 +18,4 @@ Route::view('/dashboard','dashboard')->middleware('auth');
 //creamos una ruta que reciba post
 //primer parametro es el controlador y el segundo el metodo a usar
 Route::post('login', [LoginController::class, 'login']);
+Route::post('logout', [LoginController::class, 'logout']);
