@@ -2,11 +2,14 @@
 //Importar el facade 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 //para validar
 use Illuminate\Validation\ValidationException;
 
 
 use \App\Http\Controllers\Auth\LoginController;
+
+//dd(User::first()->toArray());
 
 Route::view('/','welcome');
 //para que funcione la redireccion se le agrega el nombre
