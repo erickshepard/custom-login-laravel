@@ -6,3 +6,7 @@
  <a href="/login">Login</a>  
 @endauth
 
+@if (session('status'))
+    <br>
+    {{ session('status')}}
+@endif
